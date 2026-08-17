@@ -1,0 +1,25 @@
+@theme "~/.config/rofi/matugen-colors.rasi"
+
+* {
+  bg0: @surface;
+  bg1: @surface-container-low;
+  bg2: @outline-variant;
+  bg3: @primary;
+  bg4: @on-primary;
+
+  fg0: @on-surface;
+  fg1: #FFFFFFFF;
+  fg2: @on-surface-variant;
+  fg3: @outline;
+}
+
+/*
+fg2 = drun color
+fg3 = search color
+fg0 = text color
+bg3 = highlight color
+bg2 = we're finding too
+bg0 = background 
+bg1 = search bar background
+*/
+

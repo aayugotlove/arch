@@ -1,0 +1,189 @@
+/**
+ * Wallpaper Gallery
+ * Designed for Rofi + Image Previews
+ */
+
+@theme "~/.config/rofi/matugen-colors.rasi"
+
+* {
+    font:   "Google Sans Flex Medium 12";
+    font-weight: 500;
+
+    background-color:   transparent;
+    text-color:         @fg0;
+
+    margin:     0px;
+    padding:    0px;
+    spacing:    0px;
+}
+
+
+* {
+    bg0: @surface;
+    bg1: @surface-container-low;
+    bg2: @outline-variant;
+    bg3: @primary;
+    bg4: @on-primary;
+
+    fg0: @on-surface;
+    fg1: #FFFFFFFF;
+    fg2: @on-surface-variant;
+    fg3: @outline;
+}
+
+configuration {
+    mode: "drun";
+    show-icons: true;
+    drun-display-format: "{name}";
+}
+
+window {
+    background-color: @bg0;
+
+    location: south;
+    anchor: south;
+
+    width: 800px;
+    y-offset: 4px;
+
+    padding: 10px;
+
+    border: 2px;
+    border-color: @bg2;
+
+    border-radius: 30px 30px 0px 0px;
+}
+
+mainbox {
+    orientation: vertical;
+
+    spacing: 16px;
+
+    children: [ "listview", "inputbar" ];
+
+    background-color: transparent;
+}
+
+inputbar {
+    enabled: true;
+
+    children: [ "entry" ];
+
+    expand: false;
+
+    background-color: transparent;
+
+    padding: 0px;
+    margin: 0px;
+}
+
+listview {
+
+    columns: 3;
+    lines: 1;
+
+    layout: vertical;
+
+    fixed-columns: true;
+    fixed-height: true;
+
+    dynamic: false;
+    cycle: true;
+
+    spacing: 12px;
+
+    padding: 5px;
+
+    scrollbar: false;
+
+    background-color: transparent;
+}
+
+element {
+
+    orientation: vertical;
+
+    spacing: 4px;
+
+     padding: 4px 12px 12px 12px; 
+
+    border: 0px;
+    border-radius: 18px;
+
+    background-color: transparent;
+
+    text-color: @fg0;
+
+    cursor: pointer;
+    background-color: @bg1; 
+    border-radius: 20px;
+}
+
+element normal.normal {
+    text-color: @fg0; 
+}
+
+element selected.normal {
+
+    background-color: rgba (255, 255, 255, 7%);
+    border: 3px;
+    border-color: @bg3;
+    border-radius: 20px;
+    padding: 1px;
+}
+
+element-icon {
+    size: 160px;
+    background-color: transparent;
+}
+
+element-text {
+
+    expand: true;
+
+    text-color: inherit;
+    margin: 2px 0px 0px 0px;
+
+    horizontal-align: 0.5;
+   
+
+    font: "Rubik Medium 12";
+    width: 18ch;
+
+    background-color: transparent;
+}
+
+entry {
+    expand: true;
+
+    background-color: @bg1;
+
+    border-radius: 15px;
+
+    padding: 10px 12px;
+
+    placeholder: "Search wallpapers...";
+    placeholder-color: @fg3;
+
+    text-color: @fg0;
+}
+
+scrollbar {
+    enabled: false;
+}
+
+textbox {
+    background-color: transparent;
+    text-color: @fg0;
+}
+
+error-message {
+
+    padding: 15px;
+
+    border-radius: 16px;
+
+    background-color: @bg0;
+
+    text-color: @fg0;
+}

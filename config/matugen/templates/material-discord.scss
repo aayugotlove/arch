@@ -1,0 +1,136 @@
+// <post:compile_scss.material-discord.css>
+@use "sass:color";
+@use "sass:math";
+@use "<var:outputFolder>/colors.scss" as *;
+
+@import url(https://capnkitten.github.io/BetterDiscord/Themes/Material-Discord/css/source.css);
+
+$hueLight: math.round(color.channel($primaryLight, "hue", $space: hsl));
+$saturationLight: math.round(color.channel($primaryLight, "saturation", $space: hsl));
+$lightnessLight: math.round(color.channel($primaryLight, "lightness", $space: hsl));
+
+$hueDark: math.round(color.channel($primaryDark, "hue", $space: hsl));
+$saturationDark: math.round(color.channel($primaryDark, "saturation", $space: hsl));
+$lightnessDark: math.round(color.channel($primaryDark, "lightness", $space: hsl));
+
+.theme-light {
+    --main-color: #{$backgroundLight};
+    --main-alt: #{$surfaceContainerLowLight};
+	--accent-secondary-color: #{$secondaryLight};
+	--accent-secondary-text-color: #{$onSecondaryLight};
+
+    --message-color: #{$surfaceContainerLowestLight};
+    --message-color-hover: #{$surfaceContainerLight};
+    --message-color-alt: #{$surfaceContainerLight};
+    --attachment-color: #{$backgroundLight};
+
+    --accent-hue: #{$hueLight};
+    --accent-saturation: #{$saturationLight};
+    --accent-lightness: #{$lightnessLight};
+    --accent-text-color: #{$onPrimaryLight};
+
+    --main-textarea-color: #{$surfaceContainerHighLight};
+    --main-textarea-color-alt: #{$surfaceContainerHighestLight};
+    --status-picker-color: #{$surfaceContainerHighLight};
+
+    --tooltip-color: #{$surfaceContainerLight};
+    --popout-color: #{$surfaceContainerLight};
+    --popout-color-alt: #{$surfaceContainerLowestLight};
+    --popout-header-border: #{$onSurfaceLight};
+    --separator-color: #{$outlineVariantLight};
+    --sidebar-panel-color: #{$surfaceContainerLowestLight};
+    --server-color: #{$surfaceContainerLowLight};
+
+	--tooltip-color: #{$surfaceContainerLight};
+	--tooltip-text-color: #{$onSurfaceLight};
+
+    [class*="wrapper_"][class*="modeSelected_"] [class*="link_"] {
+        background-color: $secondaryContainerLight;
+    }
+
+    :where(.visual-refresh) [class*="modeConnected_"] {
+        [class*="name_"],
+        &:hover [class*="name_"] {
+            color: $onSecondaryContainerLight;
+        }
+    }
+
+    [class*="sidebar_"] [class*="item_"][class*="selected_"] {
+        background-color: $secondaryContainerLight !important;
+        color: $onSecondaryContainerLight !important;
+    }
+
+	[class*="channel_"] [class*="interactive_"][class*="selected_"] {
+        background-color: $secondaryContainerLight !important;
+        color: $onSecondaryContainerLight !important;
+	}
+
+    [class*="botTag_"] svg path {
+        fill: #{$onPrimaryLight};
+    }
+}
+
+.theme-dark {
+    --main-color: #{$backgroundDark};
+    --main-alt: #{$surfaceContainerLowDark};
+	--accent-secondary-color: #{$secondaryDark};
+	--accent-secondary-text-color: #{$onSecondaryDark};
+
+    --message-color: #{$surfaceContainerLowestDark};
+    --message-color-hover: #{$surfaceContainerDark};
+    --message-color-alt: #{$surfaceContainerDark};
+    --attachment-color: #{$backgroundDark};
+
+    --accent-hue: #{$hueDark};
+    --accent-saturation: #{$saturationDark};
+    --accent-lightness: #{$lightnessDark};
+    --accent-text-color: #{$onPrimaryDark};
+
+    --main-textarea-color: #{$surfaceContainerHighDark};
+    --main-textarea-color-alt: #{$surfaceContainerHighestDark};
+    --status-picker-color: #{$surfaceContainerHighDark};
+
+    --tooltip-color: #{$surfaceContainerDark};
+    --popout-color: #{$surfaceContainerDark};
+    --popout-color-alt: #{$surfaceContainerLowestDark};
+    --popout-header-border: #{$onSurfaceDark};
+    --separator-color: #{$outlineVariantDark};
+    --sidebar-panel-color: #{$surfaceContainerLowestDark};
+    --server-color: #{$surfaceContainerLowDark};
+
+	--tooltip-color: #{$surfaceContainerDark};
+	--tooltip-text-color: #{$onSurfaceDark};
+
+    [class*="wrapper_"][class*="modeSelected_"] [class*="link_"] {
+        background-color: $secondaryContainerDark;
+    }
+
+    :where(.visual-refresh) [class*="modeConnected_"] {
+        [class*="name_"],
+        &:hover [class*="name_"] {
+            color: $onSecondaryContainerDark;
+        }
+    }
+
+    [class*="sidebar_"] [class*="item_"][class*="selected_"] {
+        background-color: $secondaryContainerDark !important;
+        color: $onSecondaryContainerDark !important;
+    }
+
+	[class*="channel_"] [class*="interactive_"][class*="selected_"] {
+        background-color: $secondaryContainerDark !important;
+        color: $onSecondaryContainerDark !important;
+	}
+
+    [class*="botTag_"] svg path {
+        fill: #{$onPrimaryDark};
+    }
+}
+
+[class*="repliedTextContent_"] {
+    padding: 0px 5px 0px 5px !important;
+}
+
+[class*="userPopoutOuter_"] {
+    border-radius: 16px !important;
+}

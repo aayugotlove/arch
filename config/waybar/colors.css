@@ -1,0 +1,25 @@
+@import "matugen-colors.css";
+
+/* Matugen colors mapped for Waybar */
+
+@define-color bg0 @background;      /* Using Matugen 'background' */
+@define-color bg1 @surface_container_low;      /* Using Matugen 'surface_container_low' */
+@define-color bg2 @surface_container;      /* Using Matugen 'surface_container' */
+@define-color bg3 @surface_container_high;      /* Using Matugen 'surface_container_high' */
+@define-color bg4 @surface_container_highest;      /* Using Matugen 'surface_container_highest' */
+
+/* Workspace Active Gradient & Accents */
+@define-color blue   @primary;   /* Using Matugen 'primary' */
+@define-color purple @secondary;   /* Using Matugen 'secondary' */
+@define-color red    @error;   /* Using Matugen 'error' */
+@define-color orange @on_tertiary_fixed_variant;   /* Using Matugen 'on_tertiary_fixed_variant' */
+@define-color yellow @primary_fixed;   /* Using Matugen 'primary_fixed' */
+@define-color aqua   @source_color;   /* Using Matugen 'source_color' */
+
+/* Text & Foreground */
+@define-color fg     @on_background;   /* Using Matugen 'on_background' */
+@define-color fg0    @surface;   /* Using Matugen 'surface' (fixes the module margins) */
+
+/* Workspace Inactive Numbers */
+@define-color grey0  @outline;   /* Using Matugen 'outline' */
+@define-color grey1  @outline_variant;   /* Using Matugen 'outline_variant' */

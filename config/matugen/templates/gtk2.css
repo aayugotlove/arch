@@ -1,0 +1,1179 @@
+/*
+ * macOS Tahoe GTK Theme
+ * Dynamic Material You Template for Matugen
+ *
+ * Author: ChatGPT + Sushank
+ * Supports: GTK3 + GTK4
+ */
+
+* {
+    font-family: "Rubik Variable", sans-serif;
+    font-weight: 500;
+}
+
+/* ==========================================================
+ * ACCENT COLORS
+ * ========================================================== */
+
+@define-color accent_color            {{colors.primary.default.hex}};
+@define-color accent_bg_color         {{colors.primary_container.default.hex}};
+@define-color accent_fg_color         {{colors.on_primary.default.hex}};
+
+@define-color accent_hover_color      {{colors.primary_fixed.default.hex}};
+@define-color accent_pressed_color    {{colors.primary_fixed_dim.default.hex}};
+
+/* ==========================================================
+ * SURFACES
+ * ========================================================== */
+
+@define-color window_bg_color         {{colors.surface.default.hex}};
+@define-color window_fg_color         {{colors.on_surface.default.hex}};
+
+@define-color view_bg_color           {{colors.surface_container_low.default.hex}};
+@define-color view_fg_color           {{colors.on_surface.default.hex}};
+
+@define-color card_bg_color           {{colors.surface_container.default.hex}};
+@define-color card_fg_color           {{colors.on_surface.default.hex}};
+
+@define-color dialog_bg_color         {{colors.surface_container_high.default.hex}};
+@define-color dialog_fg_color         {{colors.on_surface.default.hex}};
+
+@define-color popover_bg_color        {{colors.surface_container_high.default.hex}};
+@define-color popover_fg_color        {{colors.on_surface.default.hex}};
+
+@define-color menu_bg_color           {{colors.surface_container_high.default.hex}};
+@define-color menu_fg_color           {{colors.on_surface.default.hex}};
+
+/* ==========================================================
+ * HEADERBAR
+ * ========================================================== */
+
+@define-color headerbar_bg_color      {{colors.surface.default.hex}};
+@define-color headerbar_fg_color      {{colors.on_surface.default.hex}};
+
+@define-color headerbar_border_color  rgba(255,255,255,0.04);
+@define-color headerbar_backdrop_color @headerbar_bg_color;
+@define-color headerbar_shade_color   transparent;
+
+/* ==========================================================
+ * SIDEBAR
+ * ========================================================== */
+
+@define-color sidebar_bg_color        {{colors.surface_container.default.hex}};
+@define-color sidebar_fg_color        {{colors.on_surface.default.hex}};
+
+@define-color secondary_sidebar_bg_color
+                                        {{colors.surface_container_high.default.hex}};
+
+@define-color secondary_sidebar_fg_color
+                                        {{colors.on_surface.default.hex}};
+
+/* ==========================================================
+ * BORDERS
+ * ========================================================== */
+
+@define-color borders_color           {{colors.outline_variant.default.hex}};
+@define-color outline_color           {{colors.outline.default.hex}};
+
+@define-color separator_color         alpha({{colors.outline.default.hex}},0.18);
+
+/* ==========================================================
+ * TEXT
+ * ========================================================== */
+
+@define-color text_color              {{colors.on_surface.default.hex}};
+@define-color text_secondary_color    {{colors.on_surface_variant.default.hex}};
+@define-color text_disabled_color     alpha({{colors.on_surface.default.hex}},0.38);
+
+/* ==========================================================
+ * LINKS
+ * ========================================================== */
+
+@define-color link_color              {{colors.primary.default.hex}};
+@define-color link_visited_color      {{colors.secondary.default.hex}};
+
+/* ==========================================================
+ * SELECTION
+ * ========================================================== */
+
+@define-color selection_bg_color      {{colors.primary.default.hex}};
+@define-color selection_fg_color      {{colors.on_primary.default.hex}};
+
+/* ==========================================================
+ * BUTTONS
+ * ========================================================== */
+
+@define-color button_bg_color         {{colors.surface_container_high.default.hex}};
+@define-color button_fg_color         {{colors.on_surface.default.hex}};
+
+@define-color button_hover_color
+    alpha({{colors.on_surface.default.hex}},0.05);
+
+@define-color button_active_color
+    alpha({{colors.on_surface.default.hex}},0.10);
+
+/* ==========================================================
+ * ENTRIES
+ * ========================================================== */
+
+@define-color entry_bg_color          {{colors.surface_container_high.default.hex}};
+@define-color entry_fg_color          {{colors.on_surface.default.hex}};
+
+@define-color entry_border_color
+    alpha({{colors.outline.default.hex}},0.20);
+
+/* ==========================================================
+ * SCROLLBARS
+ * ========================================================== */
+
+@define-color scrollbar_color
+    alpha({{colors.on_surface.default.hex}},0.18);
+
+@define-color scrollbar_hover_color
+    alpha({{colors.on_surface.default.hex}},0.30);
+
+/* ==========================================================
+ * STATES
+ * ========================================================== */
+
+@define-color success_color           {{colors.secondary.default.hex}};
+@define-color success_bg_color        {{colors.secondary_container.default.hex}};
+@define-color success_fg_color        {{colors.on_secondary_container.default.hex}};
+
+@define-color warning_color           {{colors.tertiary.default.hex}};
+@define-color warning_bg_color        {{colors.tertiary_container.default.hex}};
+@define-color warning_fg_color        {{colors.on_tertiary_container.default.hex}};
+
+@define-color error_color             {{colors.error.default.hex}};
+@define-color error_bg_color          {{colors.error_container.default.hex}};
+@define-color error_fg_color          {{colors.on_error_container.default.hex}};
+
+/* ==========================================================
+ * FILE MANAGER COLORS
+ * ========================================================== */
+
+@define-color folder_color            {{colors.primary.default.hex}};
+@define-color folder_bg_color         {{colors.primary_container.default.hex}};
+@define-color folder_fg_color         {{colors.on_primary_container.default.hex}};
+
+@define-color file_color              {{colors.on_surface_variant.default.hex}};
+@define-color image_color             {{colors.tertiary.default.hex}};
+@define-color archive_color           {{colors.error.default.hex}};
+
+@define-color thumbnail_frame_color
+    {{colors.outline_variant.default.hex}};
+
+/* ==========================================================
+ * SHADOWS
+ * ========================================================== */
+
+@define-color shadow_color rgba(0,0,0,0.22);
+@define-color card_shadow_color rgba(0,0,0,0.10);
+
+/* ==========================================================
+ * RADIUS (reference)
+ *
+ * macOS uses roughly:
+ * Buttons 8px
+ * Entries 10px
+ * Cards 12px
+ * Dialogs 14px
+ * ========================================================== */
+
+
+/* ==========================================================
+ * PART 2 — WIDGETS (macOS Tahoe)
+ * ========================================================== */
+
+/* ----------------------------------------------------------
+ * Windows
+ * ---------------------------------------------------------- */
+
+window,
+.background {
+    background: @window_bg_color;
+    color: @window_fg_color;
+}
+
+/* Remove heavy CSD shadows */
+window.csd,
+window.csd decoration {
+    box-shadow: none;
+}
+
+/* ----------------------------------------------------------
+ * Headerbar
+ * ---------------------------------------------------------- */
+
+headerbar,
+.titlebar,
+headerbar.default-decoration {
+
+    background: @headerbar_bg_color;
+    color: @headerbar_fg_color;
+
+    border: none;
+
+    box-shadow:
+        inset 0 -1px alpha(@borders_color, .35);
+
+    min-height: 40px;
+
+    padding: 4px 10px;
+}
+
+/* ----------------------------------------------------------
+ * Buttons
+ * ---------------------------------------------------------- */
+
+button {
+
+    background: @button_bg_color;
+    color: @button_fg_color;
+
+    border: 1px solid alpha(@borders_color,.25);
+
+    border-radius: 10px;
+
+    padding: 6px 14px;
+
+    transition: 120ms;
+}
+
+button:hover {
+
+    background: @button_hover_color;
+}
+
+button:active {
+
+    background: @button_active_color;
+}
+
+button:disabled {
+
+    opacity: .45;
+}
+
+/* Accent button */
+
+button.suggested-action {
+
+    background: @accent_color;
+
+    color: @accent_fg_color;
+
+    border: none;
+}
+
+button.suggested-action:hover {
+
+    background: @accent_hover_color;
+}
+
+button.suggested-action:active {
+
+    background: @accent_pressed_color;
+}
+
+/* Destructive */
+
+button.destructive-action {
+
+    background: @error_color;
+
+    color: @error_fg_color;
+
+    border: none;
+}
+
+/* ----------------------------------------------------------
+ * Entries
+ * ---------------------------------------------------------- */
+
+entry,
+textview,
+searchentry {
+
+    background: @entry_bg_color;
+
+    color: @entry_fg_color;
+
+    border-radius: 10px;
+
+    border: 1px solid @entry_border_color;
+
+    padding: 8px;
+}
+
+entry:hover {
+
+    border-color: alpha(@accent_color,.35);
+}
+
+entry:focus {
+
+    border-color: @accent_color;
+
+    box-shadow:
+        0 0 0 2px alpha(@accent_color,.25);
+}
+
+/* ----------------------------------------------------------
+ * Search Bars
+ * ---------------------------------------------------------- */
+
+searchbar {
+
+    background: transparent;
+
+    border: none;
+
+    padding: 8px;
+}
+
+/* ----------------------------------------------------------
+ * Checkboxes
+ * ---------------------------------------------------------- */
+
+check,
+checkbutton check {
+
+    border-radius: 6px;
+
+    border: 1px solid alpha(@borders_color,.4);
+
+    background: @card_bg_color;
+}
+
+check:checked,
+checkbutton check:checked {
+
+    background: @accent_color;
+
+    color: @accent_fg_color;
+
+    border-color: @accent_color;
+}
+
+/* ----------------------------------------------------------
+ * Radio Buttons
+ * ---------------------------------------------------------- */
+
+radio,
+radiobutton radio {
+
+    border-radius: 999px;
+
+    border: 1px solid alpha(@borders_color,.4);
+
+    background: @card_bg_color;
+}
+
+radio:checked,
+radiobutton radio:checked {
+
+    background: @accent_color;
+
+    color: @accent_fg_color;
+}
+
+/* ----------------------------------------------------------
+ * Switches
+ * ---------------------------------------------------------- */
+
+switch {
+
+    border-radius: 999px;
+
+    background: alpha(@window_fg_color,.12);
+
+    transition: 150ms;
+}
+
+switch slider {
+
+    border-radius: 999px;
+
+    background: white;
+}
+
+switch:checked {
+
+    background: @accent_color;
+}
+
+/* ----------------------------------------------------------
+ * Progress Bars
+ * ---------------------------------------------------------- */
+
+progressbar trough,
+levelbar trough {
+
+    background: alpha(@window_fg_color,.08);
+
+    border-radius: 999px;
+}
+
+progressbar progress,
+levelbar block.filled {
+
+    background: @accent_color;
+
+    border-radius: 999px;
+}
+
+/* ----------------------------------------------------------
+ * Scrollbars
+ * ---------------------------------------------------------- */
+
+scrollbar {
+
+    background: transparent;
+}
+
+scrollbar slider {
+
+    min-width: 6px;
+    min-height: 6px;
+
+    border-radius: 999px;
+
+    background: @scrollbar_color;
+}
+
+scrollbar slider:hover {
+
+    background: @scrollbar_hover_color;
+}
+
+scrollbar slider:active {
+
+    background: @accent_color;
+}
+
+/* ----------------------------------------------------------
+ * ComboBox
+ * ---------------------------------------------------------- */
+
+combobox box {
+
+    border-radius: 10px;
+
+    background: @button_bg_color;
+
+    border: 1px solid alpha(@borders_color,.25);
+}
+
+/* ----------------------------------------------------------
+ * Spin Buttons
+ * ---------------------------------------------------------- */
+
+spinbutton {
+
+    border-radius: 10px;
+
+    background: @button_bg_color;
+
+    border: 1px solid alpha(@borders_color,.25);
+}
+
+/* ----------------------------------------------------------
+ * Scale / Sliders
+ * ---------------------------------------------------------- */
+
+scale trough {
+
+    min-height: 4px;
+
+    background: alpha(@window_fg_color,.08);
+
+    border-radius: 999px;
+}
+
+scale highlight {
+
+    background: @accent_color;
+
+    border-radius: 999px;
+}
+
+scale slider {
+
+    min-width: 18px;
+    min-height: 18px;
+
+    border-radius: 999px;
+
+    background: white;
+
+    border: 1px solid alpha(@borders_color,.25);
+}
+
+/* ----------------------------------------------------------
+ * Notebook Tabs
+ * ---------------------------------------------------------- */
+
+notebook {
+
+    background: transparent;
+}
+
+notebook > header {
+
+    background: transparent;
+
+    border: none;
+}
+
+notebook tab {
+
+    border-radius: 10px;
+
+    padding: 8px 14px;
+
+    background: transparent;
+}
+
+notebook tab:hover {
+
+    background: alpha(@window_fg_color,.05);
+}
+
+notebook tab:checked {
+
+    background: alpha(@accent_color,.16);
+
+    color: @accent_color;
+}
+
+/* ----------------------------------------------------------
+ * Focus Ring
+ * ---------------------------------------------------------- */
+
+*:focus-visible {
+
+    outline: none;
+
+    box-shadow:
+        0 0 0 2px alpha(@accent_color,.30);
+}
+
+/* ==========================================================
+ * PART 3 — FILE MANAGERS (Finder Style)
+ * Nautilus • Thunar • GtkFileChooser
+ * ========================================================== */
+
+/* ----------------------------------------------------------
+ * Navigation Sidebar
+ * ---------------------------------------------------------- */
+
+.navigation-sidebar,
+.sidebar,
+placessidebar,
+placessidebar.sidebar {
+
+    background: @sidebar_bg_color;
+    color: @sidebar_fg_color;
+
+    border-right: 1px solid alpha(@borders_color,.18);
+}
+
+/* Sidebar rows */
+
+.navigation-sidebar row,
+placessidebar row {
+
+    min-height: 34px;
+
+    margin: 2px 6px;
+
+    padding: 2px 10px;
+
+    border-radius: 8px;
+
+    transition: 120ms;
+}
+
+.navigation-sidebar row:hover,
+placessidebar row:hover {
+
+    background: alpha(@window_fg_color,.05);
+}
+
+.navigation-sidebar row:selected,
+placessidebar row:selected {
+
+    background: alpha(@accent_color,.18);
+
+    color: @accent_color;
+}
+
+/* ----------------------------------------------------------
+ * Main Content
+ * ---------------------------------------------------------- */
+
+.nautilus-window,
+.nautilus-window .view,
+.view {
+
+    background: @view_bg_color;
+    color: @view_fg_color;
+}
+
+/* ----------------------------------------------------------
+ * Icon View
+ * ---------------------------------------------------------- */
+
+iconview.view {
+
+    background: transparent;
+}
+
+iconview.view:selected {
+
+    background: alpha(@accent_color,.16);
+
+    color: @accent_color;
+
+    border-radius: 12px;
+}
+
+iconview.view:hover {
+
+    background: alpha(@window_fg_color,.04);
+
+    border-radius: 12px;
+}
+
+/* ----------------------------------------------------------
+ * List View
+ * ---------------------------------------------------------- */
+
+treeview.view,
+listview {
+
+    background: transparent;
+}
+
+treeview.view:selected,
+listview row:selected {
+
+    background: alpha(@accent_color,.16);
+
+    color: @accent_color;
+
+    border-radius: 10px;
+}
+
+treeview.view:hover,
+listview row:hover {
+
+    background: alpha(@window_fg_color,.04);
+}
+
+/* ----------------------------------------------------------
+ * Column Headers
+ * ---------------------------------------------------------- */
+
+treeview header {
+
+    background: transparent;
+
+    border-bottom: 1px solid alpha(@borders_color,.16);
+
+    padding: 6px;
+}
+
+/* ----------------------------------------------------------
+ * File Chooser
+ * ---------------------------------------------------------- */
+
+filechooser {
+
+    background: @window_bg_color;
+}
+
+filechooser .sidebar {
+
+    background: @sidebar_bg_color;
+}
+
+/* ----------------------------------------------------------
+ * Breadcrumb Path Bar
+ * ---------------------------------------------------------- */
+
+.path-bar button {
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 8px;
+
+    padding: 4px 10px;
+}
+
+.path-bar button:hover {
+
+    background: alpha(@window_fg_color,.05);
+}
+
+.path-bar button:checked {
+
+    background: alpha(@accent_color,.16);
+
+    color: @accent_color;
+}
+
+/* ----------------------------------------------------------
+ * Folder Icons
+ * ---------------------------------------------------------- */
+
+.folder-icon,
+.folder > image,
+image.folder-symbolic {
+
+    color: @folder_color;
+}
+
+/* Home/Desktop */
+
+image.user-home-symbolic,
+image.user-desktop-symbolic,
+image.folder-download-symbolic,
+image.folder-documents-symbolic,
+image.folder-music-symbolic,
+image.folder-pictures-symbolic,
+image.folder-publicshare-symbolic,
+image.folder-videos-symbolic {
+
+    color: @folder_color;
+}
+
+/* ----------------------------------------------------------
+ * Generic File Icons
+ * ---------------------------------------------------------- */
+
+image.text-x-generic-symbolic,
+image.application-x-executable-symbolic,
+image.application-x-generic-symbolic {
+
+    color: @text_secondary_color;
+}
+
+/* ----------------------------------------------------------
+ * Images
+ * ---------------------------------------------------------- */
+
+image.image-x-generic-symbolic {
+
+    color: @image_color;
+}
+
+/* ----------------------------------------------------------
+ * Archives
+ * ---------------------------------------------------------- */
+
+image.application-x-archive-symbolic,
+image.package-x-generic-symbolic {
+
+    color: @archive_color;
+}
+
+/* ----------------------------------------------------------
+ * Thumbnails
+ * ---------------------------------------------------------- */
+
+.icon-view image,
+.thumbnail {
+
+    border-radius: 10px;
+}
+
+/* ----------------------------------------------------------
+ * Rubberband Selection
+ * ---------------------------------------------------------- */
+
+rubberband {
+
+    background: alpha(@accent_color,.18);
+
+    border: 1px solid alpha(@accent_color,.45);
+
+    border-radius: 10px;
+}
+
+/* ----------------------------------------------------------
+ * Separators
+ * ---------------------------------------------------------- */
+
+separator {
+
+    background: alpha(@borders_color,.18);
+}
+
+/* ----------------------------------------------------------
+ * Menus
+ * ---------------------------------------------------------- */
+
+menu,
+popover {
+
+    background: @popover_bg_color;
+
+    color: @popover_fg_color;
+
+    border-radius: 12px;
+
+    border: 1px solid alpha(@borders_color,.16);
+}
+
+menuitem {
+
+    border-radius: 8px;
+
+    padding: 6px 12px;
+}
+
+menuitem:hover {
+
+    background: alpha(@accent_color,.14);
+}
+
+/* ----------------------------------------------------------
+ * Toolbar Buttons
+ * ---------------------------------------------------------- */
+
+toolbar button {
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 8px;
+}
+
+toolbar button:hover {
+
+    background: alpha(@window_fg_color,.05);
+}
+
+/* ----------------------------------------------------------
+ * Finder-like Selection
+ * ---------------------------------------------------------- */
+
+:selected {
+
+    background: alpha(@accent_color,.18);
+
+    color: inherit;
+}
+
+/* ==========================================================
+ * PART 4 — POLISH & COMPATIBILITY
+ * macOS Tahoe Final
+ * ========================================================== */
+
+/* ----------------------------------------------------------
+ * Tooltips
+ * ---------------------------------------------------------- */
+
+tooltip {
+
+    background: @popover_bg_color;
+    color: @popover_fg_color;
+
+    border-radius: 10px;
+
+    border: 1px solid alpha(@borders_color,.18);
+
+    padding: 6px 10px;
+}
+
+tooltip label {
+    color: inherit;
+}
+
+/* ----------------------------------------------------------
+ * Popovers
+ * ---------------------------------------------------------- */
+
+popover {
+
+    background: @popover_bg_color;
+    color: @popover_fg_color;
+
+    border-radius: 14px;
+
+    border: 1px solid alpha(@borders_color,.18);
+}
+
+/* ----------------------------------------------------------
+ * Dialogs
+ * ---------------------------------------------------------- */
+
+dialog {
+
+    background: @dialog_bg_color;
+    color: @dialog_fg_color;
+
+    border-radius: 16px;
+}
+
+/* ----------------------------------------------------------
+ * Frames
+ * ---------------------------------------------------------- */
+
+frame {
+
+    border: 1px solid alpha(@borders_color,.16);
+
+    border-radius: 12px;
+}
+
+/* ----------------------------------------------------------
+ * Cards
+ * ---------------------------------------------------------- */
+
+.card,
+.card.frame {
+
+    background: @card_bg_color;
+
+    border-radius: 14px;
+
+    border: 1px solid alpha(@borders_color,.16);
+}
+
+/* ----------------------------------------------------------
+ * Lists
+ * ---------------------------------------------------------- */
+
+list,
+listview {
+
+    background: transparent;
+}
+
+list row,
+listview row {
+
+    border-radius: 10px;
+
+    margin: 2px 6px;
+
+    padding: 4px 10px;
+}
+
+list row:hover,
+listview row:hover {
+
+    background: alpha(@window_fg_color,.05);
+}
+
+/* ----------------------------------------------------------
+ * Preferences Groups
+ * ---------------------------------------------------------- */
+
+.preferences-group {
+
+    background: @card_bg_color;
+
+    border-radius: 14px;
+
+    border: 1px solid alpha(@borders_color,.16);
+}
+
+/* ----------------------------------------------------------
+ * Calendar
+ * ---------------------------------------------------------- */
+
+calendar {
+
+    border-radius: 12px;
+}
+
+calendar:selected {
+
+    background: @accent_color;
+
+    color: @accent_fg_color;
+
+    border-radius: 999px;
+}
+
+/* ----------------------------------------------------------
+ * Spinner
+ * ---------------------------------------------------------- */
+
+spinner {
+
+    color: @accent_color;
+}
+
+/* ----------------------------------------------------------
+ * Links
+ * ---------------------------------------------------------- */
+
+label link {
+
+    color: @link_color;
+}
+
+label link:hover {
+
+    color: @accent_hover_color;
+}
+
+/* ----------------------------------------------------------
+ * Text Selection
+ * ---------------------------------------------------------- */
+
+text selection,
+entry selection {
+
+    background: alpha(@accent_color,.28);
+
+    color: @selection_fg_color;
+}
+
+/* ----------------------------------------------------------
+ * OSD
+ * ---------------------------------------------------------- */
+
+.osd,
+.background.osd {
+
+    background: alpha(black,.72);
+
+    color: white;
+
+    border-radius: 16px;
+}
+
+/* ----------------------------------------------------------
+ * Statusbar
+ * ---------------------------------------------------------- */
+
+statusbar {
+
+    background: transparent;
+
+    border-top: 1px solid alpha(@borders_color,.16);
+}
+
+/* ----------------------------------------------------------
+ * Pane Separators
+ * ---------------------------------------------------------- */
+
+paned separator {
+
+    background: transparent;
+
+    min-width: 6px;
+}
+
+paned separator:hover {
+
+    background: alpha(@accent_color,.16);
+}
+
+/* ----------------------------------------------------------
+ * Selection
+ * ---------------------------------------------------------- */
+
+*:selected {
+
+    background: alpha(@accent_color,.18);
+
+    color: inherit;
+}
+
+/* ----------------------------------------------------------
+ * Disabled
+ * ---------------------------------------------------------- */
+
+*:disabled {
+
+    opacity: .50;
+}
+
+/* ----------------------------------------------------------
+ * Images
+ * ---------------------------------------------------------- */
+
+image {
+
+    -gtk-icon-shadow: none;
+}
+
+/* ----------------------------------------------------------
+ * Window Decorations
+ * ---------------------------------------------------------- */
+
+decoration {
+
+    border-radius: 14px;
+}
+
+/* ----------------------------------------------------------
+ * Headerbar Buttons
+ * ---------------------------------------------------------- */
+
+headerbar button {
+
+    background: transparent;
+
+    border: none;
+
+    border-radius: 8px;
+}
+
+headerbar button:hover {
+
+    background: alpha(@window_fg_color,.06);
+}
+
+/* ----------------------------------------------------------
+ * Sidebar Buttons
+ * ---------------------------------------------------------- */
+
+.navigation-sidebar button {
+
+    background: transparent;
+
+    border: none;
+}
+
+/* ----------------------------------------------------------
+ * Keyboard Focus
+ * ---------------------------------------------------------- */
+
+*:focus {
+
+    outline: none;
+}
+
+*:focus-visible {
+
+    box-shadow: 0 0 0 2px alpha(@accent_color,.35);
+}
+
+/* ----------------------------------------------------------
+ * Animations
+ * ---------------------------------------------------------- */
+
+* {
+
+    transition-property:
+        background-color,
+        color,
+        border-color,
+        box-shadow,
+        opacity;
+
+    transition-duration: 120ms;
+    transition-timing-function: ease;
+}
+

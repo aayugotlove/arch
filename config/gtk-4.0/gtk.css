@@ -1,0 +1,232 @@
+/* matugen gtk template — auto-generated from wallpaper */
+/* place at: ~/.config/matugen/templates/gtk.css                          */
+/* target:   ~/.config/gtk-3.0/gtk.css  &&  ~/.config/gtk-4.0/gtk.css    */
+
+* {
+  font-weight: 500;
+ }
+
+/* ── core role colors ────────────────────────────────────────────── */
+@define-color accent_color         #84d6c2;
+@define-color accent_bg_color      #005144;
+@define-color accent_fg_color      #a0f2de;
+
+@define-color destructive_color    #ffb4ab;
+@define-color destructive_bg_color #93000a;
+@define-color destructive_fg_color #ffdad6;
+
+@define-color success_color        #b1ccc4;
+@define-color success_bg_color     #334b45;
+@define-color success_fg_color     #cde8e0;
+
+@define-color warning_color        #aacbe4;
+@define-color warning_bg_color     #2a4a5f;
+@define-color warning_fg_color     #c8e6ff;
+
+@define-color error_color          #ffb4ab;
+@define-color error_bg_color       #93000a;
+@define-color error_fg_color       #ffdad6;
+
+/* ── surfaces ────────────────────────────────────────────────────── */
+@define-color window_bg_color      #0e1513;
+@define-color window_fg_color      #dee4e0;
+@define-color view_bg_color        #0e1513;
+@define-color view_fg_color        #dee4e0;
+
+@define-color card_bg_color        #252b29;
+@define-color card_fg_color        #dee4e0;
+@define-color card_shade_color     rgba(0,0,0,0.07);
+
+@define-color dialog_bg_color      @card_bg_color;
+@define-color dialog_fg_color      @card_fg_color;
+@define-color popover_bg_color     @card_bg_color;
+@define-color popover_fg_color     @card_fg_color;
+
+/* ── headerbar ───────────────────────────────────────────────────── */
+@define-color headerbar_bg_color       @window_bg_color;
+@define-color headerbar_fg_color       @window_fg_color;
+@define-color headerbar_border_color   @window_bg_color;
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color headerbar_shade_color    @window_bg_color;
+
+/* ── sidebar ─────────────────────────────────────────────────────── */
+@define-color sidebar_bg_color                  #171d1b;
+@define-color secondary_sidebar_bg_color        @sidebar_bg_color;
+@define-color sidebar_backdrop_color            @sidebar_bg_color;
+@define-color secondary_sidebar_backdrop_color  @sidebar_bg_color;
+
+/* ── misc chrome ─────────────────────────────────────────────────── */
+@define-color shade_color             rgba(0,0,0,0.36);
+@define-color scrollbar_outline_color rgba(139,145,152,0.5);
+
+/* ── file-manager / icon-view semantic colors ────────────────────── */
+/*    these tint folder icons, selection highlights, and emblems      */
+
+/* folder icon body */
+@define-color folder_color         #84d6c2;
+/* folder icon interior / open state */
+@define-color folder_bg_color      #005144;
+@define-color folder_fg_color      #a0f2de;
+
+/* document / generic file icon */
+@define-color file_color           #b1ccc4;
+@define-color file_bg_color        #334b45;
+@define-color file_fg_color        #cde8e0;
+
+/* image / media file icon */
+@define-color image_color          #aacbe4;
+@define-color image_bg_color       #2a4a5f;
+@define-color image_fg_color       #c8e6ff;
+
+/* archive / compressed file icon */
+@define-color archive_color        #ffb4ab;
+@define-color archive_bg_color     #93000a;
+@define-color archive_fg_color     #ffdad6;
+
+/* special / system folder icon */
+@define-Rubikl_folder_color    #066b5b;
+@define-color special_folder_bg_color #005144;
+@define-color special_folder_fg_color #a0f2de;
+
+/* icon-view item selection */
+@define-color icon_view_selected_bg   #84d6c2;
+@define-color icon_view_selected_fg   #00382e;
+
+/* thumbnail frame */
+@define-color thumbnail_frame_color   #3f4946;
+
+/* ── semantic text / link ─────────────────────────────────────────── */
+@define-color link_color           #84d6c2;
+@define-color link_visited_color   #b1ccc4;
+
+/* ── selection ───────────────────────────────────────────────────── */
+@define-color selection_color      #84d6c2;
+@define-color selection_bg_color   #005144;
+
+/* ── outline / border token ──────────────────────────────────────── */
+@define-color borders_color        #3f4946;
+
+/* ═══════════════════════════════════════════════════════════════════
+   component overrides
+   ═══════════════════════════════════════════════════════════════════ */
+
+.navigation-sidebar {
+  background-color: @sidebar_bg_color;
+  color:            @window_fg_color;
+}
+
+/* nautilusʼ icon view — tint selected items with wallpaper primary */
+iconview.view:selected,
+iconview.view:selected:focus,
+.nautilus-list-view .view:selected,
+.nautilus-list-view .view:selected:focus {
+  background-color: @icon_view_selected_bg;
+  color:            @icon_view_selected_fg;
+}
+
+/* folder icon colour (symbolic) — works in Nautilus + Thunar */
+.folder-icon,
+.folder > image,
+image.folder-symbolic {
+  color: @folder_color;
+}
+
+/* special/home/desktop folder badge */
+.folder-special > image,
+image.user-home-symbolic,
+image.user-desktop-symbolic {
+  color: @special_folder_color;
+}
+
+/* generic file accent */
+.file > image,
+image.text-x-generic-symbolic {
+  color: @file_color;
+}
+
+/* image file accent */
+image.image-x-generic-symbolic {
+  color: @image_color;
+}
+
+/* archive file accent */
+image.application-x-archive-symbolic {
+  color: @archive_color;
+}
+
+/* link colour inside file managers / text views */
+*:link {
+  color: @link_color;
+}
+*:visited {
+  color: @link_visited_color;
+}
+
+/* focus ring uses accent */
+*:focus-visible {
+  outline: 2px solid @accent_color;
+  outline-offset: 2px;
+}
+
+/* CSD — strip window shadows */
+window.csd,
+window.csd decoration {
+  box-shadow: none;
+}
+
+/* decorated headerbar fix (GNOME shell) */
+headerbar.default-decoration {
+  margin-bottom: 50px;
+  margin-top:   -100px;
+}
+
+/* ── scrollbars ──────────────────────────────────────────────────── */
+scrollbar slider {
+  background-color: #3f4946;
+  border-radius: 99px;
+  min-width:  6px;
+  min-height: 6px;
+}
+scrollbar slider:hover {
+  background-color: #89938f;
+}
+
+/* ── tooltip ─────────────────────────────────────────────────────── */
+tooltip {
+  background-color: #2b3230;
+  color:            #dee4e0;
+  border-radius:    6px;
+  padding:          4px 10px;
+}
+
+/* ── progress / level-bar ────────────────────────────────────────── */
+progressbar trough,
+levelbar trough {
+  background-color: #303634;
+}
+progressbar progress,
+levelbar block.high {
+  background-color: @accent_color;
+}
+levelbar block.low {
+  background-color: @warning_color;
+}
+levelbar block.empty {
+  background-color: @destructive_color;
+}
+
+/* ── check / radio ───────────────────────────────────────────────── */
+checkbutton check:checked,
+radiobutton radio:checked {
+  background-color: @accent_bg_color;
+  color:            @accent_fg_color;
+  border-color:     @accent_color;
+}
+
+/* ── switches ────────────────────────────────────────────────────── */
+switch:checked {
+  background-color: @accent_color;
+}
+switch:checked slider {
+  background-color: #00382e;
+}

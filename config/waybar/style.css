@@ -1,0 +1,96 @@
+@import "colors.css";
+
+* {
+    border: none;
+    border-radius: 0px;
+    font-family: "Rubik", "MapleMono NF CN";
+    font-size: 17px;
+    min-height: 0;
+    padding: 0;
+    margin: 0;
+}
+
+.modules-center {
+    background: @bg0;
+    padding: 7px 14px;
+    border-radius: 28px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+window#waybar {
+    background: transparent;
+}
+
+tooltip {
+    background: @bg2;
+    border: 1px solid @bg3;
+    border-radius: 12px;
+}
+
+tooltip label {
+    color: @fg;
+    padding: 3px;
+}
+
+#workspaces {
+    background: transparent;
+    padding: 0;
+    margin: 0 10px 0 10px;
+    border: none;
+    box-shadow: none;
+}
+
+#workspaces button {
+    padding: 2px 4px;
+    margin: 0px 1px;
+    border-radius: 16px;
+    color: @grey0;
+    font-weight: 400;
+    background: transparent;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button.active {
+    background: linear-gradient(135deg, @blue 100%, @purple 45%, @red 75%);
+    color: @bg0;
+    min-width: 35px;
+    font-weight: 400;
+    transition: all 0.3s ease-in-out;
+}
+
+#workspaces button:hover {
+    background-color: @bg3;
+    color: @fg;
+}
+
+#workspaces button.urgent {
+    background-color: @red;
+    color: @bg0;
+}
+
+#battery, 
+#pulseaudio,
+#network,
+#clock,
+
+#pulseaudio {
+    color: @primary;
+    margin-right: 32px;
+}
+
+#network {
+    color: @primary;
+    margin-right: 31px;
+}
+
+#battery {
+    color: @primary;
+    margin-right: 14px;
+}
+
+#clock {
+    color: @fg;
+    margin: -4px;
+    padding: 0 10px;
+    font-weight: 500;
+}

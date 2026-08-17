@@ -1,0 +1,232 @@
+/* matugen gtk template — auto-generated from wallpaper */
+/* place at: ~/.config/matugen/templates/gtk.css                          */
+/* target:   ~/.config/gtk-3.0/gtk.css  &&  ~/.config/gtk-4.0/gtk.css    */
+
+* {
+  font-weight: 500;
+ }
+
+/* ── core role colors ────────────────────────────────────────────── */
+@define-color accent_color         {{colors.primary.default.hex}};
+@define-color accent_bg_color      {{colors.primary_container.default.hex}};
+@define-color accent_fg_color      {{colors.on_primary_container.default.hex}};
+
+@define-color destructive_color    {{colors.error.default.hex}};
+@define-color destructive_bg_color {{colors.error_container.default.hex}};
+@define-color destructive_fg_color {{colors.on_error_container.default.hex}};
+
+@define-color success_color        {{colors.secondary.default.hex}};
+@define-color success_bg_color     {{colors.secondary_container.default.hex}};
+@define-color success_fg_color     {{colors.on_secondary_container.default.hex}};
+
+@define-color warning_color        {{colors.tertiary.default.hex}};
+@define-color warning_bg_color     {{colors.tertiary_container.default.hex}};
+@define-color warning_fg_color     {{colors.on_tertiary_container.default.hex}};
+
+@define-color error_color          {{colors.error.default.hex}};
+@define-color error_bg_color       {{colors.error_container.default.hex}};
+@define-color error_fg_color       {{colors.on_error_container.default.hex}};
+
+/* ── surfaces ────────────────────────────────────────────────────── */
+@define-color window_bg_color      {{colors.surface.default.hex}};
+@define-color window_fg_color      {{colors.on_surface.default.hex}};
+@define-color view_bg_color        {{colors.surface.default.hex}};
+@define-color view_fg_color        {{colors.on_surface.default.hex}};
+
+@define-color card_bg_color        {{colors.surface_container_high.default.hex}};
+@define-color card_fg_color        {{colors.on_surface.default.hex}};
+@define-color card_shade_color     rgba(0,0,0,0.07);
+
+@define-color dialog_bg_color      @card_bg_color;
+@define-color dialog_fg_color      @card_fg_color;
+@define-color popover_bg_color     @card_bg_color;
+@define-color popover_fg_color     @card_fg_color;
+
+/* ── headerbar ───────────────────────────────────────────────────── */
+@define-color headerbar_bg_color       @window_bg_color;
+@define-color headerbar_fg_color       @window_fg_color;
+@define-color headerbar_border_color   @window_bg_color;
+@define-color headerbar_backdrop_color @window_bg_color;
+@define-color headerbar_shade_color    @window_bg_color;
+
+/* ── sidebar ─────────────────────────────────────────────────────── */
+@define-color sidebar_bg_color                  {{colors.surface_container_low.default.hex}};
+@define-color secondary_sidebar_bg_color        @sidebar_bg_color;
+@define-color sidebar_backdrop_color            @sidebar_bg_color;
+@define-color secondary_sidebar_backdrop_color  @sidebar_bg_color;
+
+/* ── misc chrome ─────────────────────────────────────────────────── */
+@define-color shade_color             rgba(0,0,0,0.36);
+@define-color scrollbar_outline_color rgba(139,145,152,0.5);
+
+/* ── file-manager / icon-view semantic colors ────────────────────── */
+/*    these tint folder icons, selection highlights, and emblems      */
+
+/* folder icon body */
+@define-color folder_color         {{colors.primary.default.hex}};
+/* folder icon interior / open state */
+@define-color folder_bg_color      {{colors.primary_container.default.hex}};
+@define-color folder_fg_color      {{colors.on_primary_container.default.hex}};
+
+/* document / generic file icon */
+@define-color file_color           {{colors.secondary.default.hex}};
+@define-color file_bg_color        {{colors.secondary_container.default.hex}};
+@define-color file_fg_color        {{colors.on_secondary_container.default.hex}};
+
+/* image / media file icon */
+@define-color image_color          {{colors.tertiary.default.hex}};
+@define-color image_bg_color       {{colors.tertiary_container.default.hex}};
+@define-color image_fg_color       {{colors.on_tertiary_container.default.hex}};
+
+/* archive / compressed file icon */
+@define-color archive_color        {{colors.error.default.hex}};
+@define-color archive_bg_color     {{colors.error_container.default.hex}};
+@define-color archive_fg_color     {{colors.on_error_container.default.hex}};
+
+/* special / system folder icon */
+@define-Rubikl_folder_color    {{colors.inverse_primary.default.hex}};
+@define-color special_folder_bg_color {{colors.primary_container.default.hex}};
+@define-color special_folder_fg_color {{colors.on_primary_container.default.hex}};
+
+/* icon-view item selection */
+@define-color icon_view_selected_bg   {{colors.primary.default.hex}};
+@define-color icon_view_selected_fg   {{colors.on_primary.default.hex}};
+
+/* thumbnail frame */
+@define-color thumbnail_frame_color   {{colors.outline_variant.default.hex}};
+
+/* ── semantic text / link ─────────────────────────────────────────── */
+@define-color link_color           {{colors.primary.default.hex}};
+@define-color link_visited_color   {{colors.secondary.default.hex}};
+
+/* ── selection ───────────────────────────────────────────────────── */
+@define-color selection_color      {{colors.primary.default.hex}};
+@define-color selection_bg_color   {{colors.primary_container.default.hex}};
+
+/* ── outline / border token ──────────────────────────────────────── */
+@define-color borders_color        {{colors.outline_variant.default.hex}};
+
+/* ═══════════════════════════════════════════════════════════════════
+   component overrides
+   ═══════════════════════════════════════════════════════════════════ */
+
+.navigation-sidebar {
+  background-color: @sidebar_bg_color;
+  color:            @window_fg_color;
+}
+
+/* nautilusʼ icon view — tint selected items with wallpaper primary */
+iconview.view:selected,
+iconview.view:selected:focus,
+.nautilus-list-view .view:selected,
+.nautilus-list-view .view:selected:focus {
+  background-color: @icon_view_selected_bg;
+  color:            @icon_view_selected_fg;
+}
+
+/* folder icon colour (symbolic) — works in Nautilus + Thunar */
+.folder-icon,
+.folder > image,
+image.folder-symbolic {
+  color: @folder_color;
+}
+
+/* special/home/desktop folder badge */
+.folder-special > image,
+image.user-home-symbolic,
+image.user-desktop-symbolic {
+  color: @special_folder_color;
+}
+
+/* generic file accent */
+.file > image,
+image.text-x-generic-symbolic {
+  color: @file_color;
+}
+
+/* image file accent */
+image.image-x-generic-symbolic {
+  color: @image_color;
+}
+
+/* archive file accent */
+image.application-x-archive-symbolic {
+  color: @archive_color;
+}
+
+/* link colour inside file managers / text views */
+*:link {
+  color: @link_color;
+}
+*:visited {
+  color: @link_visited_color;
+}
+
+/* focus ring uses accent */
+*:focus-visible {
+  outline: 2px solid @accent_color;
+  outline-offset: 2px;
+}
+
+/* CSD — strip window shadows */
+window.csd,
+window.csd decoration {
+  box-shadow: none;
+}
+
+/* decorated headerbar fix (GNOME shell) */
+headerbar.default-decoration {
+  margin-bottom: 50px;
+  margin-top:   -100px;
+}
+
+/* ── scrollbars ──────────────────────────────────────────────────── */
+scrollbar slider {
+  background-color: {{colors.outline_variant.default.hex}};
+  border-radius: 99px;
+  min-width:  6px;
+  min-height: 6px;
+}
+scrollbar slider:hover {
+  background-color: {{colors.outline.default.hex}};
+}
+
+/* ── tooltip ─────────────────────────────────────────────────────── */
+tooltip {
+  background-color: {{colors.inverse_on_surface.default.hex}};
+  color:            {{colors.inverse_surface.default.hex}};
+  border-radius:    6px;
+  padding:          4px 10px;
+}
+
+/* ── progress / level-bar ────────────────────────────────────────── */
+progressbar trough,
+levelbar trough {
+  background-color: {{colors.surface_container_highest.default.hex}};
+}
+progressbar progress,
+levelbar block.high {
+  background-color: @accent_color;
+}
+levelbar block.low {
+  background-color: @warning_color;
+}
+levelbar block.empty {
+  background-color: @destructive_color;
+}
+
+/* ── check / radio ───────────────────────────────────────────────── */
+checkbutton check:checked,
+radiobutton radio:checked {
+  background-color: @accent_bg_color;
+  color:            @accent_fg_color;
+  border-color:     @accent_color;
+}
+
+/* ── switches ────────────────────────────────────────────────────── */
+switch:checked {
+  background-color: @accent_color;
+}
+switch:checked slider {
+  background-color: {{colors.on_primary.default.hex}};
+}

@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+SHADER="$HOME/.config/hypr/shaders/grayscale.glsl"
+
+if hyprshade current | grep -q "grayscale"; then
+    hyprshade off
+else
+    hyprshade on "$SHADER"
+fi

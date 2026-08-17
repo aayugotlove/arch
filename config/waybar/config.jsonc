@@ -1,0 +1,118 @@
+{
+    "position": "top",
+    "margin-top": 10,
+
+
+    "spacing": 0,
+    "modules-center": [
+        "tray",
+        "clock",
+        "hyprland/workspaces",
+        "pulseaudio",
+        "network",
+        "battery"
+    ],
+
+    "hyprland/submap": {
+        "format": "{}",
+        "tooltip": false
+    },
+
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
+            "default": "",
+            "urgent": "●"
+        },
+        "persistent-workspaces": {
+            "*": 5
+        },
+        "on-click": "activate",
+        "disable-click": false,
+        "on-scroll-down": "hyprctl dispatch workspace e+1",
+        "on-scroll-up": "hyprctl dispatch workspace e-1"
+    },
+
+    "battery": {
+	"bat": "BAT0",
+	"interval": 60,
+	"states": {
+		"warning": 40,
+		"critical": 20
+	},
+	"events": {
+		"on-discharging-warning": "notify-send -u normal 'Low Battery'",
+		"on-discharging-critical": "notify-send -u critical 'Very Low Battery'",
+		"on-charging-100": "notify-send -u normal 'Battery Full!'",
+		"on-discharging": "notify-send -u normal 'Power Switch' Discharging",
+		"on-charging": "notify-send -u normal 'Power Switch' Charging'"
+	},
+	"format": "{icon}",
+	"format-icons": ["", "", "", "", ""],
+    "format-charging": "{icon}   {capacity}%",
+    "tooltip-format": "Battery is at {capacity}%",
+	"max-length": 25
+},
+
+
+     "pulseaudio": {
+        "format": " {icon}",
+        "format-bluetooth": " {volume}%",
+        "format-muted": " ",
+        "scroll-step": 1,
+        "on-click": "pavucontrol",
+        "ignored-sinks": ["Easy Effects Sink"],
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", "", ""]
+        },
+        "tooltip-format": "Volume: {volume}%"
+    },
+
+    "network": {
+        "interface": "wlp1s0",
+        "format": "{ifname}",
+        "format-wifi": "{icon}",
+        "format-ethernet": " {ipaddr}/{cidr}",
+        "format-disconnected": "󰤮",
+        "on-click": "kitty --hold nmtui",
+        "max-length": 50,
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "tooltip-format": "Connected: {essid}"
+    },
+
+    "clock": {
+        "format": "{:%H:%M}",
+        "interval": 1,
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "calendar": {
+            "format": {
+                "today": "<span color='#ff0000'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click-right": "shift_down",
+            "on-click": "shift_up"
+        }
+    },
+
+
+    "tray": {
+        "icon-size": 16
+    }
+}

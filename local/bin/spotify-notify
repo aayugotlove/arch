@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+
+playerctl --player=spotify --follow metadata \
+  --format $'{{artist}}|{{title}}|{{album}}|{{mpris:artUrl}}' |
+while IFS='|' read -r artist title album art; do
+    [ -z "$title" ] && continue
+
+    icon="spotify"
+
+    if [[ "$art" == file://* ]]; then
+        icon="${art#file://}"
+    elif [[ "$art" == http* ]]; then
+        tmp=$(mktemp /tmp/spotify-cover-XXXX.jpg)
+        curl -sL "$art" -o "$tmp"
+        icon="$tmp"
+    fi
+
+    notify-send \
+        -a "Spotify" \
+        -r 9999 \
+        -i "$icon" \
+        "$title" \
+        "$artist • $album"
+done

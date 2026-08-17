@@ -1,0 +1,6 @@
+Rubik --system font
+Google Sans Flex --used in some dotfiles
+Oswald -- for hyprlock
+Apple Color Emoji --for better emoji
+Noto Fonts --for all language support in website
+

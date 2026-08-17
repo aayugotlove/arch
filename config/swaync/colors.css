@@ -1,0 +1,21 @@
+/* Import the automatically generated Matugen colors */
+@import "matugen-colors.css";
+
+/* Semantic aliases mapped to Matugen roles */
+@define-color background @surface_container;
+@define-color background-alt @surface_container;
+@define-color hover @surface_bright;
+@define-color selected @primary;
+
+@define-color text @on_surface;
+@define-color text-alt @on_surface_variant;
+
+@define-color notification-bg @surface_container_low;
+@define-color center-bg @surface;
+@define-color center-notification-bg @surface_container;
+
+@define-color urgent @error;
+
+/* 
+   ... The rest of your SwayNC CSS code goes below here ... 
+*/

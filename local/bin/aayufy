@@ -1,0 +1,90 @@
+#!/usr/bin/env bash
+
+iDIR="$HOME/.config/swaync/icons"
+
+set -euo pipefail
+
+########################################
+# Configuration
+########################################
+
+WALL_DIR="$HOME/wals"
+
+TRANSITION_TYPE="any"
+TRANSITION_STEP=255
+TRANSITION_FPS=60
+
+########################################
+# Check wallpaper directory
+########################################
+
+[[ -d "$WALL_DIR" ]] || {
+    notify-send "Wallpaper" "Wallpaper directory not found."
+    exit 1
+}
+
+cd "$WALL_DIR"
+
+########################################
+# Build Rofi Menu
+########################################
+
+IFS=$'\n'
+
+SELECTED=$(
+for img in *.jpg *.jpeg *.png *.webp *.bmp *.gif; do
+    [[ -f "$img" ]] || continue
+    printf "%s\0icon\x1f%s\n" "$img" "$img"
+done | rofi \
+    -dmenu \
+    -show-icons \
+    -i \
+    -theme "$HOME/.config/rofi/style.rasi" \
+    -p "󰸉 Wallpaper"
+)
+
+########################################
+# Cancelled
+########################################
+
+[[ -z "$SELECTED" ]] && exit 0
+
+IMAGE="$WALL_DIR/$SELECTED"
+
+########################################
+# Notification
+########################################
+
+notify-send \
+  -h string:x-canonical-private-synchronous:theme \
+  -h int:value:100 \
+  -u low \
+  -i "$iDIR/palette.svg" \
+  "Applying Theme" \
+  "Generating Material You colors..."
+
+########################################
+# Set Wallpaper
+########################################
+
+awww img "$IMAGE" \
+    --transition-type="$TRANSITION_TYPE" \
+    --transition-step="$TRANSITION_STEP" \
+    --transition-fps="$TRANSITION_FPS"
+
+########################################
+# Generate Matugen Theme
+########################################
+
+matugen image "$IMAGE" --source-color-index 0
+
+########################################
+# Finished
+########################################
+
+notify-send \
+  -h int:value:100 \
+  -u low \
+  -i "$iDIR/picture.svg" \
+  "Wallpaper & Theme applied" \
+  "Enjoy your new theme..."
